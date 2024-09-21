@@ -11,30 +11,21 @@
       Telegram.WebApp.onEvent("themeChanged", setThemeClass);
       setThemeClass();
     </script>
-    <script src="https://functions.pro-talk.ru/api/v1.0/get_dialog_ai_widget_api?record_id=recwQhyR6Kx4ZH2hs&promt_id=8396&lang=ru"></script>
   </head>
   <body>
     <script>
       Telegram.WebApp.ready();
       let tg = window.Telegram.WebApp;
       tg.expand();
-      // const client = new pro-talkWebSDK.WebChatClient({
-      //   config: {
-      //     bot_id: "8396", //ID of your bot on pro-talk.ru
-      //   },
-      //   componentProps: {
-      //     title: "pro-talk",
-      //   },
-      // });
-      // client.destroy();
-      new pro-talkWebSDK.WebChatClient({
-        config: {
-          bot_id: "8396", //ID of your bot on pro-talk.ru
-        },
-        componentProps: {
-          title: "pro-talk",
-        },
-      });
+      
+      // Инициализация виджета с платформы pro-talk.ru
+      (function() {
+        var s = document.createElement('script');
+        s.src = "https://functions.pro-talk.ru/api/v1.0/get_dialog_ai_widget_api?record_id=recwQhyR6Kx4ZH2hs&promt_id=8396&lang=ru";
+        s.async = true;
+        document.body.appendChild(s);
+      })();
     </script>
   </body>
 </html>
+
