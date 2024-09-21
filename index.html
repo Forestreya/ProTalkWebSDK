@@ -14,10 +14,22 @@
   </head>
   <body>
     <script>
-      Telegram\.WebApp\.ready();
-      let tg = window\.Telegram\.WebApp;
-      tg\.expand();
+      Telegram\.WebApp\.ready(function() {
+        let tg = window\.Telegram\.WebApp;
+        tg\.expand();
+        console\.log("Telegram Web App is ready");
+
+        // Инициализация виджета после готовности Telegram Web App
+        let script = document\.createElement('script');
+        script\.src = "https://functions\.pro-talk\.ru/api/v1\.0/get_dialog_ai_widget_api?record_id=recwQhyR6Kx4ZH2hs&promt_id=8396&lang=ru";
+        script\.onload = function() {
+          console\.log("Widget script loaded successfully");
+        };
+        script\.onerror = function() {
+          console\.error("Error loading widget script");
+        };
+        document\.body\.appendChild(script);
+      });
     </script>
-    <script src="https://functions\.pro-talk\.ru/api/v1\.0/get_dialog_ai_widget_api?record_id=recwQhyR6Kx4ZH2hs&promt_id=8396&lang=ru"></script>
   </body>
 </html>
