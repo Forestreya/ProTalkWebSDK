@@ -1,40 +1,37 @@
-<!DOCTYPE html>
+<\!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://tg.dev/js/telegram-web-app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script src="https://telegram\.org/js/telegram-web-app\.js"></script>
     <script>
       function setThemeClass() {
-        document.documentElement.className = Telegram.WebApp.colorScheme;
+        document\.documentElement\.className = Telegram\.WebApp\.colorScheme;
       }
-      Telegram.WebApp.onEvent("themeChanged", setThemeClass);
+      Telegram\.WebApp\.onEvent("themeChanged", setThemeClass);
       setThemeClass();
     </script>
-    <script src="https://functions.pro-talk.ru/api/v1.0/get_dialog_ai_widget_api?record_id=recwQhyR6Kx4ZH2hs&promt_id=8396&lang=ru"></script>
+    <script src="https://functions\.pro-talk\.ru/api/v1\.0/get_dialog_ai_widget_api?record_id=recwQhyR6Kx4ZH2hs&promt_id=8396&lang=ru"></script>
   </head>
   <body>
     <script>
-      Telegram.WebApp.ready();
-      let tg = window.Telegram.WebApp;
-      tg.expand();
-      // const client = new pro-talkWebSDK.WebChatClient({
-      //   config: {
-      //     bot_id: "8396", //ID of your bot on pro-talk.ru
-      //   },
-      //   componentProps: {
-      //     title: "pro-talk",
-      //   },
-      // });
-      // client.destroy();
-      new pro-talkWebSDK.WebChatClient({
-        config: {
-          bot_id: "8396", //ID of your bot on pro-talk.ru
-        },
-        componentProps: {
-          title: "pro-talk",
-        },
-      });
+      Telegram\.WebApp\.ready();
+      let tg = window\.Telegram\.WebApp;
+      tg\.expand();
+      
+      if (typeof pro-talkWebSDK \!== 'undefined') {
+        new pro-talkWebSDK\.WebChatClient({
+          config: {
+            bot_id: "8396", // ID вашего бота на pro-talk\.ru
+          },
+          componentProps: {
+            title: "pro-talk",
+          },
+        });
+      } else {
+        console\.error('pro-talkWebSDK is not defined');
+      }
     </script>
   </body>
 </html>
+
